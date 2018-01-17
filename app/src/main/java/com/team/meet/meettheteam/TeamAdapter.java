@@ -41,6 +41,7 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.ViewHolder>{
         Log.i("VICTOR", "member avatar url downloading: " + members.get(i).avatar);
 
         viewHolder.tvName.setText(members.get(i).firstName + " " +members.get(i).lastName);
+        viewHolder.tvTitle.setText(members.get(i).title);
         viewHolder.downloadAvatar(members.get(i).avatar);
         //Picasso.with(context).load(members.get(i).avatar).resize(240, 120).into(viewHolder.ivAvatar);
     }
@@ -54,11 +55,14 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.ViewHolder>{
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         private TextView tvName;
+        private  TextView tvTitle;
         private ImageView ivAvatar;
+
         public ViewHolder(View view) {
             super(view);
 
             tvName = (TextView)view.findViewById(R.id.tvName);
+            tvTitle = (TextView)view.findViewById(R.id.tvTitle);
             ivAvatar = (ImageView) view.findViewById(R.id.ivAvatar);
         }
 
