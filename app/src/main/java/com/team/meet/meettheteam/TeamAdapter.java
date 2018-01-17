@@ -1,6 +1,7 @@
 package com.team.meet.meettheteam;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -36,7 +37,7 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.ViewHolder>{
     }
 
     @Override
-    public void onBindViewHolder(TeamAdapter.ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(TeamAdapter.ViewHolder viewHolder, final int i) {
 
         Log.i("VICTOR", "member avatar url downloading: " + members.get(i).avatar);
 
@@ -44,6 +45,17 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.ViewHolder>{
         viewHolder.tvTitle.setText(members.get(i).title);
         viewHolder.downloadAvatar(members.get(i).avatar);
         //Picasso.with(context).load(members.get(i).avatar).resize(240, 120).into(viewHolder.ivAvatar);
+
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, DetailsActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                Log.i("VICTOR", "member clicked: " + members.get(i).firstName + " " +members.get(i).lastName);
+                context.startActivity(intent);
+            }
+        });
+
     }
 
     @Override
