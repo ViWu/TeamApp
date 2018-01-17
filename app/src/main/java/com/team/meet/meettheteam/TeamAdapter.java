@@ -39,7 +39,7 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.ViewHolder>{
     @Override
     public void onBindViewHolder(TeamAdapter.ViewHolder viewHolder, final int i) {
 
-        Log.i("VICTOR", "member avatar url downloading: " + members.get(i).avatar);
+        //Log.i("VICTOR", "member avatar url downloading: " + members.get(i).avatar);
 
         viewHolder.tvName.setText(members.get(i).firstName + " " +members.get(i).lastName);
         viewHolder.tvTitle.setText(members.get(i).title);
