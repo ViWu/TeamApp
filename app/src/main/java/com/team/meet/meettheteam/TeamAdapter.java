@@ -51,6 +51,7 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.ViewHolder>{
             public void onClick(View v) {
                 Intent intent = new Intent(context, DetailsActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.putExtra("position", i);
                 Log.i("VICTOR", "member clicked: " + members.get(i).firstName + " " +members.get(i).lastName);
                 context.startActivity(intent);
             }

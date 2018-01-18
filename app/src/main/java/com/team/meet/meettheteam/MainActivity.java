@@ -18,7 +18,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     public Member[] arr;
-    ArrayList<Member> members;
+    public static ArrayList<Member> members;
     public TeamAdapter teamAdapter;
 
     @Override
@@ -60,8 +60,6 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(),2);
         recyclerView.setLayoutManager(layoutManager);
-
-        //ArrayList<Member> androidVersions = prepareData();
 
         TeamAdapter adapter = new TeamAdapter(getBaseContext(), members);
         recyclerView.setAdapter(adapter);
