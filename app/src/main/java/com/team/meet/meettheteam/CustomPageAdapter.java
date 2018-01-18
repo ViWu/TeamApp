@@ -1,6 +1,7 @@
 package com.team.meet.meettheteam;
 
 import android.content.Context;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.view.PagerAdapter;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -21,14 +22,18 @@ class CustomPageAdapter extends PagerAdapter {
     ArrayList<Member> team;
     private String avatar, name, title, bio;
     ImageView ivAvatar;
+    int position;
+
+    public static CollapsingToolbarLayout collapsingToolbarLayout;
 
     //int[] resources = {R.drawable.image1, R.drawable.image2, R.drawable.image3};
 
-    public CustomPageAdapter(Context context, ArrayList<Member> team) {
+    public CustomPageAdapter(Context context, ArrayList<Member> team, int position) {
         context = context;
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         this.team = new ArrayList<Member>(team);
+        this.position = position;
     }
 
     @Override
@@ -52,8 +57,12 @@ class CustomPageAdapter extends PagerAdapter {
         title = team.get(position).title;
         bio = team.get(position).bio;
 
+        //collapsingToolbarLayout = (CollapsingToolbarLayout) itemView.findViewById(R.id.toolbar_layout);
+        //collapsingToolbarLayout.setTitle(name);
+
         TextView tvName = (TextView) itemView.findViewById(R.id.tvName);
         tvName.setText(name);
+        Log.i("VICTOR", "position clicked custompageadapter: " + position + ", " + name);
 
         TextView tvTitle = (TextView) itemView.findViewById(R.id.tvTitle);
         tvTitle.setText(title);
