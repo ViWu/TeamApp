@@ -90,7 +90,6 @@ class CustomPageAdapter extends PagerAdapter {
                 //           .networkPolicy(NetworkPolicy.OFFLINE)
                 .resize(640, 640)
                 .onlyScaleDown()
-                .placeholder(R.mipmap.ic_launcher)
                 .into(ivAvatar, new Callback() {
                     @Override
                     public void onSuccess() {
@@ -104,7 +103,6 @@ class CustomPageAdapter extends PagerAdapter {
                                 .load(url)
                                 .resize(240, 240)
                                 .onlyScaleDown()
-                                .placeholder(R.mipmap.ic_launcher)
                                 //.error(R.drawable.header)
                                 .into(ivAvatar, new Callback() {
                                     @Override

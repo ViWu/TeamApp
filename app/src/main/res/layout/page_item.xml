@@ -24,6 +24,7 @@
                 android:layout_gravity="center_horizontal"
                 android:fitsSystemWindows="true"
                 android:scaleType="centerCrop"
+                android:background="#e5e5e5"
                 />
 
 

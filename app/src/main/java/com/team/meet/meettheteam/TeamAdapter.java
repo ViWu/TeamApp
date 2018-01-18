@@ -86,7 +86,7 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.ViewHolder>{
                     //           .networkPolicy(NetworkPolicy.OFFLINE)
                     .resize(240, 240)
                     .onlyScaleDown()
-                    .placeholder(R.mipmap.ic_launcher)
+                    .placeholder(R.drawable.placeholder)
                     .into(ivAvatar, new Callback() {
                         @Override
                         public void onSuccess() {
@@ -100,7 +100,7 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.ViewHolder>{
                                     .load(url)
                                     .resize(240, 240)
                                     .onlyScaleDown()
-                                    .placeholder(R.mipmap.ic_launcher)
+                                    .placeholder(R.drawable.placeholder)
                                     //.error(R.drawable.header)
                                     .into(ivAvatar, new Callback() {
                                         @Override

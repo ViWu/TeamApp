@@ -65,7 +65,6 @@ public class PageFragment extends Fragment {
                 //           .networkPolicy(NetworkPolicy.OFFLINE)
                 .resize(240, 240)
                 .onlyScaleDown()
-                .placeholder(R.mipmap.ic_launcher)
                 .into(ivAvatar, new Callback() {
                     @Override
                     public void onSuccess() {
@@ -79,7 +78,6 @@ public class PageFragment extends Fragment {
                                 .load(url)
                                 .resize(240, 240)
                                 .onlyScaleDown()
-                                .placeholder(R.mipmap.ic_launcher)
                                 //.error(R.drawable.header)
                                 .into(ivAvatar, new Callback() {
                                     @Override
